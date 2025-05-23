@@ -1,0 +1,55 @@
+# Python-specific
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+env/
+venv/
+ENV/
+.env
+.venv/
+
+# Dependency directories
+site-packages/
+dist/
+build/
+*.egg
+*.egg-info/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Logs and temporary files
+*.log
+*.log.*
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Testing and coverage
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Miscellaneous
+*.cache
+*.pid
+*.seed
+*.pid.lock
+*.sqlite3
