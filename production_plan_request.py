@@ -14,7 +14,7 @@ class Fuels(BaseModel):
 class PowerPlant(BaseModel):
     name: str = Field(...)
     type: Literal["gasfired", "turbojet", "windturbine"] = Field(...)
-    efficiency: float = Field(..., ge=0, le=1)
+    efficiency: float = Field(..., gt=0, le=1)
     pmin: int = Field(..., ge=0)
     pmax: int = Field(...)
 
