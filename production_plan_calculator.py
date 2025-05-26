@@ -1,4 +1,5 @@
 import math
+import logging
 from production_plan_request import ProductionPlanRequest
 
 def calculate_merit_order(request: ProductionPlanRequest, calculate_co2, co2_generation_tons_per_mwh):
@@ -37,7 +38,10 @@ def calculate_merit_order(request: ProductionPlanRequest, calculate_co2, co2_gen
     return sorted(powerplants_with_merit, key=lambda x: (x["merit"], x["pmin"], -x["pmax"]))
 
 def calculate_production_plan(request: ProductionPlanRequest, calculate_co2, co2_generation_tons_per_mwh):
+    logger = logging.getLogger('ProductionPlanLogger')
     powerplants_by_merit_list = calculate_merit_order(request, calculate_co2, co2_generation_tons_per_mwh)
+
+    logger.info(f'Merit order: {powerplants_by_merit_list}')
 
     production_plan = {}
     for powerplant in powerplants_by_merit_list:
